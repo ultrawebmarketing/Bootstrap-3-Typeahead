@@ -101,7 +101,7 @@
                     .val(this.displayText(newVal) || newVal)
                     .text(this.displayText(newVal) || newVal)
                     .change();
-                this.afterSelect(newVal);
+                this.afterSelect(newVal, this.$element);
             }
             return this.hide();
         },
@@ -131,11 +131,11 @@
                     } else {
                         document.location = this.itemLink(val);
                     }
-                    this.afterSelect(newVal);
+                    this.afterSelect(newVal, this.$element);
                 } else if (this.followLinkOnSelect && !this.itemLink(val)) {
-                    this.afterEmptySelect(newVal);
+                    this.afterEmptySelect(newVal, this.$element);
                 } else {
-                    this.afterSelect(newVal);
+                    this.afterSelect(newVal, this.$element);
                 }
             } else {
                 this.afterEmptySelect();
